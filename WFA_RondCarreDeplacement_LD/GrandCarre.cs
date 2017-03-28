@@ -40,7 +40,34 @@ namespace WFA_RondCarreDeplacement_LD
 
         public void ChangementObjectif()
         {
-            
+            if (objetsTournant[0].Position == coinsGrandCarre[0])
+            {
+                objetsTournant[0].Objectif = objectifs[1];
+                objetsTournant[1].Objectif = objectifs[2];
+                objetsTournant[2].Objectif = objectifs[3];
+                objetsTournant[3].Objectif = objectifs[0]; 
+            }
+            if (objetsTournant[0].Position == coinsGrandCarre[1])
+            {
+                objetsTournant[0].Objectif = objectifs[2];
+                objetsTournant[1].Objectif = objectifs[3];
+                objetsTournant[2].Objectif = objectifs[0];
+                objetsTournant[3].Objectif = objectifs[1];
+            }
+            if (objetsTournant[0].Position == coinsGrandCarre[2])
+            {
+                objetsTournant[0].Objectif = objectifs[3];
+                objetsTournant[1].Objectif = objectifs[0];
+                objetsTournant[2].Objectif = objectifs[1];
+                objetsTournant[3].Objectif = objectifs[2];
+            }
+            if (objetsTournant[0].Position == coinsGrandCarre[3])
+            {
+                objetsTournant[0].Objectif = objectifs[0];
+                objetsTournant[1].Objectif = objectifs[1];
+                objetsTournant[2].Objectif = objectifs[2];
+                objetsTournant[3].Objectif = objectifs[3];
+            }
         }
 
         public void Paint(object sender, PaintEventArgs e)
@@ -48,6 +75,14 @@ namespace WFA_RondCarreDeplacement_LD
             foreach (ObjetAvecObjectif forme in objetsTournant)
             {
                 forme.Paint(sender, e);
+                if (forme.AvanceVersObectif())
+                {
+                    
+                }
+                else
+                {
+                    ChangementObjectif();
+                }
                 forme.AvanceVersObectif();
             }
         }
