@@ -1,6 +1,6 @@
 ﻿namespace WFA_RondCarreDeplacement_LD
 {
-    partial class Form1
+    partial class Epreuve
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Epreuve
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(584, 562);
+            this.Name = "Epreuve";
             this.Text = "Form1";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Epreuve_Paint);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

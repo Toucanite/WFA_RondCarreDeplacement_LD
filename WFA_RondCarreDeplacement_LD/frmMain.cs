@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace WFA_RondCarreDeplacement_LD
 {
-    public partial class Form1 : Form
+    public partial class Epreuve : Form
     {
-        public Form1()
+        GrandCarre monCarre = new GrandCarre(new Point(50, 50));
+
+        public Epreuve()
         {
             InitializeComponent();
+        }
+
+        private void Epreuve_Paint(object sender, PaintEventArgs e)
+        {
+            monCarre.Paint(sender, e);
         }
     }
 }
