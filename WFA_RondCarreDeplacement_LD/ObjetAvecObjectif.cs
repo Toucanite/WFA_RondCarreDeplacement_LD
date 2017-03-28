@@ -46,9 +46,31 @@ namespace WFA_RondCarreDeplacement_LD
             set { objectif = value; }
         }
 
-        public void AvanceVersObectif()
+        public bool AvanceVersObectif()
         {
+            int unite = 1;
+            if (objectif.X > moi.Location.X)
+            {
+                this.Position = new Point(this.Position.X + unite, this.Position.Y);
+                return true;
+            }
+            if (objectif.X < moi.Location.X)
+            {
+                this.Position = new Point(this.Position.X - unite, this.Position.Y);
+                return true;
+            }
+            if (objectif.Y > moi.Location.Y)
+            {
+                this.Position = new Point(this.Position.X, this.Position.Y + unite);
+                return true;
+            }
+            if (objectif.Y < moi.Location.Y)
+            {
+                this.Position = new Point(this.Position.X, this.Position.Y - unite);
+                return true;
+            }
 
+            return false;
         }
 
         public void Paint(object sender, PaintEventArgs e)

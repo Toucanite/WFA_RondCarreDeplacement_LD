@@ -12,7 +12,7 @@ namespace WFA_RondCarreDeplacement_LD
     {
         int tailleTraj = 400;
         Size tailleForme = new Size(50, 50);
-        Rectangle trajectoire, carre1, carre2, rond1, rond2;
+        Rectangle trajectoire;
         ObjetAvecObjectif[] objetsTournant = new ObjetAvecObjectif[4];
         Point[] coinsGrandCarre = new Point[4], objectifs = new Point[4];
 
@@ -38,15 +38,18 @@ namespace WFA_RondCarreDeplacement_LD
             objetsTournant[3] = new ObjetAvecObjectif(new Rectangle(coinsGrandCarre[3], tailleForme), objectifs[3], 1);
         }
 
-
+        public void ChangementObjectif()
+        {
+            
+        }
 
         public void Paint(object sender, PaintEventArgs e)
         {
             foreach (ObjetAvecObjectif forme in objetsTournant)
             {
                 forme.Paint(sender, e);
+                forme.AvanceVersObectif();
             }
-
         }
     }
 }

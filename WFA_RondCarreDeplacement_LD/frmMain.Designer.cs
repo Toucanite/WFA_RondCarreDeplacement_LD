@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.tmrAffiche = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // tmrAffiche
+            // 
+            this.tmrAffiche.Enabled = true;
+            this.tmrAffiche.Interval = 24;
+            this.tmrAffiche.Tick += new System.EventHandler(this.tmrAffiche_Tick);
             // 
             // Epreuve
             // 
@@ -43,6 +51,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer tmrAffiche;
     }
 }
 

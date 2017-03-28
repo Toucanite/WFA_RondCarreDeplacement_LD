@@ -16,12 +16,18 @@ namespace WFA_RondCarreDeplacement_LD
 
         public Epreuve()
         {
+            DoubleBuffered = true;
             InitializeComponent();
         }
 
         private void Epreuve_Paint(object sender, PaintEventArgs e)
         {
             monCarre.Paint(sender, e);
+        }
+
+        private void tmrAffiche_Tick(object sender, EventArgs e)
+        {
+            Invalidate();
         }
     }
 }
